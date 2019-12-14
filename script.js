@@ -1,19 +1,3 @@
-// function getData(cb) {
-// var data;
-// var xhr = new XMLHttpRequest();
-
-    // xhr.open("GET", "https://strainapi.evanbusse.com/ofJ0JOx/strains/search/all");
-    // xhr.open("GET", "https://strainapi.evanbusse.com/ofJ0JOx/searchdata/flavors");
-    // xhr.open("GET", "https://strainapi.evanbusse.com/ofJ0JOx/searchdata/effects");
-    // xhr.send();
-    // xhr.onreadystatechange = function () {
-        // if (this.readyState == 4 && this.status == 200) {            
-            // cb(JSON.parse(this.responseText)); 
-        // }
-    // };
-// }
-
-
 function getData(url, cb) {
     var xhr = new XMLHttpRequest();
     
@@ -64,7 +48,7 @@ function writeToDoc(url) {
 
         // console.log(data);
         data = data.results;
-        console.log(data);
+        // console.log(data);
         var tableHeaders = getTableHeaders(data[0]);
         // console.log(tableHeaders);
 

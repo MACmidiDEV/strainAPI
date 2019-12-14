@@ -1,57 +1,44 @@
 
 Documentation
-
-queries to The Strain API is as follows:
+                            queries to The Strain API is as follows:
 strainapi.evanbusse.com/ofJ0JOx
 
-Information Queries
+                            information Queries
+    Information queries are used for getting information needed for making other queries.
+                getting the list of strains or effects so you know what search parameters are available.
 
-Information queries are used for getting information needed for making other queries. For example, getting the list of strains or effects so you know what search parameters are available.
-
-List all Effects
-
+                            list all Effects
 strainapi.evanbusse.com/ofJ0JOx/searchdata/effects
 
-List all Flavors
-
+                            list all Flavors
 strainapi.evanbusse.com/ofJ0JOx/searchdata/flavors
-Search Queries
 
-Search queries are the main type of query and are used to get strain information based on a variety of criteria.
-
-Get all strains (Please use this route sparingly as it is requires a lot of computing power)
-
+                            Search Queries
+    Search queries are the main type of query and are used to get strain information based on a variety of criteria.
+                    Get all strains (Please use this route sparingly as it is requires a lot of computing power)
 strainapi.evanbusse.com/ofJ0JOx/strains/search/all
 
-Search for strains by name
-
+                            Search for strains by name
 strainapi.evanbusse.com/ofJ0JOx/strains/search/name/NAME
 
-Search for strains by race (Available races: Sativa, Indica, and Hybrid)
-
+                            Search for strains by race (Available races: Sativa, Indica, and Hybrid)
 strainapi.evanbusse.com/ofJ0JOx/strains/search/race/RACE
 
-Search for strains by effect
-
+                            Search for strains by effect
 strainapi.evanbusse.com/ofJ0JOx/strains/search/effect/EFFECT
 
-Search for strains by flavor
-
+                            Search for strains by flavor
 strainapi.evanbusse.com/ofJ0JOx/strains/search/flavor/FLAVOR
-Additional Queries
 
-Some of the search queries only return the strain with basic information and not effects or flavors. These additional queries use the strain id to return its corresponding effect or flavor data.
+                            Additional Queries
+    Some of the search queries only return the strain with basic information and not effects or flavors. 
+            These additional queries use the strain id to return its corresponding effect or flavor data.
 
-Get strain descriptions
-
-New Route
-
+                            Get strain descriptions
 strainapi.evanbusse.com/ofJ0JOx/strains/data/desc/STRAIN_ID
 
-Get strain effects
-
+                            Get strain effects
 strainapi.evanbusse.com/ofJ0JOx/strains/data/effects/STRAIN_ID
 
-Get strain flavors
-
+                            Get strain flavors
 strainapi.evanbusse.com/ofJ0JOx/strains/data/flavors/STRAIN_ID
