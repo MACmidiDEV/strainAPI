@@ -10,30 +10,75 @@
 
 
         <!-- <script type="text/javascript" src="script.js"></script> -->
-        <script type="text/javascript" src="script1.js"></script>
+        <script type="text/javascript" src="script.js"></script>
 
   </head>
 
   <body>
 
+    
       <div class="container-fluid">
           <div class="row">
             <div class="col">
               <h1 class="display-4">Strain-API</h1>
-      
             </div>
           </div>
-      
         </div>
+
       
         <!-- strains/search/all -->
+      <hr>
         <button onclick="writeToDoc('strains/search/all')">All Strains</button>
-        <!-- <button onclick="writeToDoc('https://strainapi.evanbusse.com/ofJ0JOx/strains/search/all')">All Strains</button> -->
-        <!-- <button onclick="writeToDoc('https://strainapi.evanbusse.com/ofJ0JOx/searchdata/effects')">Effects</button> --> 
-        <!-- <button onclick="writeToDoc('https://strainapi.evanbusse.com/ofJ0JOx/searchdata/flavors')">Flavors</button> -->
-        <div id="data"></div>
+        <h1 class="display-8">Search Strains</h1>
+        <button onclick="writeToDoc('strains/search/race/Sativa')">All Sativa</button>
+        <button onclick="writeToDoc('strains/search/race/Indica')">All Indica</button>
+        <button onclick="writeToDoc('strains/search/race/Hybrid')">All Hybrid</button>
+      <hr>
+        <button onclick="writeToDoc('searchdata/effects')">All Effects</button>
+        <h1 class="display-8">Search Effects</h1>
+        <button onclick="writeToDoc('strains/search/effect/Relaxed')">relaxedEffects</button>
+        <button onclick="writeToDoc('strains/search/effect/Dizzy')">dizzyEffects</button>
+        <button onclick="writeToDoc('strains/search/effect/Euphoric')">euphoricEffects</button>
+      <hr>
+        <button onclick="writeToDoc('searchdata/flavors')">All Flavors</button>
+        <h1 class="display-8">Search Flavors</h1>
+        <button onclick="writeToDoc('strains/search/flavor/Earthy')">earthyFlavor</button>
+        <button onclick="writeToDoc('strains/search/flavor/Chemical')">chemFlavor</button>
+        <button onclick="writeToDoc('strains/search/flavor/Pine')">pineFlavor</button>
+        
+      <hr>
+        <h1 class="display-8">Info-BY-ID</h1>
+        <button onclick="writeToDoc('strains/data/desc/100')">id=100_Info</button>
+        <button onclick="writeToDoc('strains/data/desc/1000')">id=1000_Info</button>
+        <button onclick="writeToDoc('strains/data/desc/2000')">id=2000_Info</button>
+        <!-- Get strain descriptions -->
+        <!-- strainapi.evanbusse.com/ofJ0JOx/strains/data/desc/STRAIN_ID -->
+        
+      <hr>
+      <h1 class="display-8">Info-BY-Effect</h1>
+        <button onclick="writeToDoc('strains/data/effects/100')">id=100_Eff</button>
+        <button onclick="writeToDoc('strains/data/effects/1000')">id=1000_Eff</button>
+        <button onclick="writeToDoc('strains/data/effects/2000')">id=2000_Eff</button>
+        <!-- Get strain effects -->
+        <!-- strainapi.evanbusse.com/ofJ0JOx/strains/data/effects/STRAIN_ID -->
+        
+      <hr>
+      <h1 class="display-8">Info-BY-Flavor</h1>
+        <button onclick="writeToDoc('strains/data/flavors/100')">id=100_Flavor</button>
+        <button onclick="writeToDoc('strains/data/flavors/1000')">id=1000_Flavor</button>
+        <button onclick="writeToDoc('strains/data/flavors/2000')">id=2000_Flavor</button>  
+        <!-- Get strain flavors -->
+        <!-- strainapi.evanbusse.com/ofJ0JOx/strains/data/flavors/STRAIN_ID      -->
+      
 
-     
+
+
+        <div id="data"></div>
+    <svg xmlns="http://www.w3.org/2000/svg" 
+      viewBox="-100 -100 3812 3812">
+        <path d=
+        "M503.47 360.25c-1.56-.82-32.39-16.89-76.78-25.81 64.25-75.12 84.05-161.67 84.93-165.64 1.18-5.33-.44-10.9-4.3-14.77-3.03-3.04-7.12-4.7-11.32-4.7-1.14 0-2.29.12-3.44.38-3.88.85-86.54 19.59-160.58 79.76.01-1.46.01-2.93.01-4.4 0-118.79-59.98-213.72-62.53-217.7A15.973 15.973 0 0 0 256 0c-5.45 0-10.53 2.78-13.47 7.37-2.55 3.98-62.53 98.91-62.53 217.7 0 1.47.01 2.94.01 4.4-74.03-60.16-156.69-78.9-160.58-79.76-1.14-.25-2.29-.38-3.44-.38-4.2 0-8.29 1.66-11.32 4.7A15.986 15.986 0 0 0 .38 168.8c.88 3.97 20.68 90.52 84.93 165.64-44.39 8.92-75.21 24.99-76.78 25.81a16.003 16.003 0 0 0-.02 28.29c2.45 1.29 60.76 31.72 133.49 31.72 6.14 0 11.96-.1 17.5-.31-11.37 22.23-16.52 38.31-16.81 39.22-1.8 5.68-.29 11.89 3.91 16.11a16.019 16.019 0 0 0 16.1 3.99c1.83-.57 37.72-11.99 77.3-39.29V504c0 4.42 3.58 8 8 8h16c4.42 0 8-3.58 8-8v-64.01c39.58 27.3 75.47 38.71 77.3 39.29a16.019 16.019 0 0 0 16.1-3.99c4.2-4.22 5.71-10.43 3.91-16.11-.29-.91-5.45-16.99-16.81-39.22 5.54.21 11.37.31 17.5.31 72.72 0 131.04-30.43 133.49-31.72 5.24-2.78 8.52-8.22 8.51-14.15-.01-5.94-3.29-11.39-8.53-14.15z"/>
+      </svg>        
  
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

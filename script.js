@@ -1,70 +1,30 @@
-function getData(url, cb) {
-    var xhr = new XMLHttpRequest();
-    
+const base = "https://strainapi.evanbusse.com/ofJ0JOx/"
 
-    xhr.open("GET", url);
-    xhr.send();
+function getData(type, cb) {
+    var xhr = new XMLHttpRequest();
+
     xhr.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             cb(JSON.parse(this.responseText));
         }
     };
 
-  
+    xhr.open("GET", base + type);
+    // xhr.open("GET", "https://strainapi.evanbusse.com/ofJ0JOx/strains/search/all");
+    xhr.send();
 }
 
-function getTableHeaders(obj) {
-    var tableHeaders = [];
-
-    Object.keys(obj).forEach(function(key) {
-        tableHeaders.push(`<td>${key}</td>`);
-    });
-
-    return `<tr style="background-color:red;">${tableHeaders}</tr>`;
-}
-
-function generatePaginationButtons(next, prev) {
-    if (next && prev) {
-        return `<button onclick="writeToDoc('${prev}')">Previous</button>
-                <button onclick="writeToDoc('${next}')">Next</button>`;
-    } else if (next && !prev) {
-        return `<button onclick="writeToDoc('${next}')">Next</button>`;
-    } else if (!next && prev) {
-        return `<button onclick="writeToDoc('${prev}')">Previous</button>`;
-    }
-}
-
-function writeToDoc(url) {
-    var tableRows = [];
-    var el = document.getElementById("data");
-    // var el = "https://strainapi.evanbusse.com/ofJ0JOx/searchdata/effects";
-
-    getData(url, function(data) {
-        var pagination = "";
-
-        if (data.next || data.previous) {
-            pagination = generatePaginationButtons(data.next, data.previous);
-        }
-
-        // console.log(data);
-        data = data.results;
-        // console.log(data);
-        var tableHeaders = getTableHeaders(data[0]);
-        // console.log(tableHeaders);
-
-        data.forEach(function(item) {
-            var dataRow = [];
-
-            Object.keys(item).forEach(function(key) {
-                var rowData = item[key].toString();
-                var truncatedData = rowData.substring(0, 15);
-                dataRow.push(`<td style="background-color:lime;">${truncatedData}</td>`);
-            });
-            tableRows.push(`<tr style="color:tea;"l>${dataRow}</tr>`);
-        });
-        
-        el.innerHTML = `<table>${tableHeaders}${tableRows}</table>${pagination}.replace("/,/g"," ")`;
+function writeToDoc(type) {
+    getData(type, function(data) {
+        // data = data.results;
+        // data.forEach(function(item){
+            document.getElementById("data").innerHTML = JSON.stringify(data); 
+            // document.getElementById("data").innerHTML = data.Afpak.race; 
+            // document.getElementById("data1").innerHTML = data.Afpak; 
+            // document.getElementById("data2").innerHTML = JSON.stringify(data.Afpak); 
+            // document.getElementById("data3").innerHTML = JSON.stringify(data); 
+            // document.getElementById("data3").innerHTML = data.Afpak.race; 
+            console.log(data);
+        // })
     });
 }
-
-
