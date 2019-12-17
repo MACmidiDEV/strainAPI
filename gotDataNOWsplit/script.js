@@ -1,8 +1,7 @@
 const base = "https://strainapi.evanbusse.com/ofJ0JOx/"
 
-var collection = new Mongo.Collection("");
-
-console.log(collection.rawCollection().db.options.url)
+// var collection = new Mongo.Collection("");
+// console.log(collection.rawCollection().db.options.url)
 
 function getData(type, cb) {
     var xhr = new XMLHttpRequest();
@@ -20,9 +19,6 @@ function getData(type, cb) {
 
 function getTableHeaders(obj) {
     var tableHeaders = [];
-    // obj = this.obj;
-    // obj = obj;
-
     Object.keys(obj).forEach(function (key) {
         tableHeaders.push(`<td>${key}</td>`)
     });
@@ -37,11 +33,15 @@ function writeToDoc(type) {
 
     getData(type, function(data) {
         // data = JSON.stringify(data);
-        data = this.data;
-        var tableHeaders = getTableHeaders(data[0]);
-
-        data.forEach(function(item) {
-            // el.innerHTML += "<p>" + item.name + "</p>";
+        // data = this.data;
+        var tableHeaders = getTableHeaders(data.keys);
+console.log(tableHeaders);
+        data.forEach(function(data) {
+            Object.keys(data.effect).forEach(function(key){
+                console.log(key);
+            })
+            el.innerHTML += "<p>" + data.effect + "</p>";
+            console.log(data);
         });
 
         el.innerHTML = `<table>${tableHeaders}</table>`;
