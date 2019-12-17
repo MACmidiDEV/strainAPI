@@ -1,5 +1,9 @@
 const base = "https://strainapi.evanbusse.com/ofJ0JOx/"
 
+var collection = new Mongo.Collection("");
+
+console.log(collection.rawCollection().db.options.url)
+
 function getData(type, cb) {
     var xhr = new XMLHttpRequest();
 
@@ -44,18 +48,23 @@ function writeToDoc(type) {
     });
 }
 
+// THIS function works but i cannot unpack to sort or build headers
+
 // function writeToDoc(type) {
 //     getData(type, function (data) {
-//         // data = JSON.stringify(data);
-//         // document.getElementById("data").innerHTML = data; 
-//         // console.log(data);
-//         // console.log(JSON.parse(data));
+//         data = JSON.stringify(data);
+//         document.getElementById("data").innerHTML = data; 
+//         console.log(data);
+//         console.log(JSON.parse(data));
+//     });
+// }
 
+
+
+//  API calls
 //         // document.getElementById("data").innerHTML = data.Afpak.race; 
 //         // document.getElementById("data1").innerHTML = data.Afpak; 
 //         // document.getElementById("data2").innerHTML = JSON.stringify(data.Afpak); 
 //         // document.getElementById("data3").innerHTML = JSON.stringify(data); 
 //         // document.getElementById("data3").innerHTML = data.Afpak.race; 
 //         // console.log(Object.keys(item).forEach(function(key){console.log(key);}))
-//     });
-// }
